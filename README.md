@@ -93,6 +93,10 @@ NEXT_PUBLIC_SITE_URL=https://azzhab.com
 NEXT_PUBLIC_FORM_ENDPOINT=https://formspree.io/f/xxxxxxx
 ```
 
+Both may be left empty. `NEXT_PUBLIC_SITE_URL` then falls back to the Vercel
+deployment domain and finally to the value in `lib/site.ts`; an empty form
+endpoint switches the forms to their mailto fallback.
+
 `NEXT_PUBLIC_*` values are inlined at build time, so set them in the hosting
 provider **before** the production build, not after.
 
@@ -179,8 +183,10 @@ the mark over the hero, which a raster cannot do cleanly.
 ## Deployment
 
 Vercel, or any Node host: `npm run build` then `npm start`. The pages are
-static; only the image optimizer needs the server. Add `sitemap.ts` and
-`robots.ts` under `app/` before launch, and a 1200x630 Open Graph image.
+static; only the image optimizer needs the server. `app/sitemap.ts` and
+`app/robots.ts` generate `/sitemap.xml` (with hreflang alternates) and
+`/robots.txt` from the resolved site URL. Still missing before launch: a
+1200x630 Open Graph image.
 
 ## The static version
 
