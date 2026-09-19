@@ -48,9 +48,6 @@ export default async function HomePage({ params }: PageParams) {
                   <Link className="btn btn--solid" href={href(locale, routes.privateLabel)}>
                     {t.cta.brief}
                   </Link>
-                  <Link className="btn btn--light" href={href(locale, routes.wholesale)}>
-                    {t.cta.price}
-                  </Link>
                 </div>
               </div>
               <dl className="hero__meta">
@@ -82,6 +79,7 @@ export default async function HomePage({ params }: PageParams) {
             <div className="stack" data-reveal>
               <p className="lead">{h.introText}</p>
               <p>{h.introText2}</p>
+              <p>{h.introText3}</p>
               <div className="mt-s">
                 <Arrow href={href(locale, routes.about)}>{t.cta.read}</Arrow>
               </div>
@@ -183,7 +181,6 @@ export default async function HomePage({ params }: PageParams) {
                 { label: h.cat4, note: h.cat4x },
                 { label: h.cat5, note: h.cat5x },
                 { label: h.cat6, note: h.cat6x },
-                { label: h.cat7, note: h.cat7x },
               ]}
             />
           </div>
@@ -231,9 +228,6 @@ export default async function HomePage({ params }: PageParams) {
       <CtaBand eyebrow={h.ctaEyebrow} title={h.ctaTitle} text={h.ctaText}>
         <Link className="btn btn--light" href={href(locale, routes.privateLabel)}>
           {t.cta.brief}
-        </Link>
-        <Link className="btn btn--light" href={href(locale, routes.wholesale)}>
-          {t.cta.price}
         </Link>
       </CtaBand>
     </main>

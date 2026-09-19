@@ -35,13 +35,14 @@ function resolveSiteUrl(): string {
 
 export const site = {
   company: "Azzhab Perfumes FZ-LLC",
-  address: "Dubai Industrial City, Warehouse 00, Dubai, United Arab Emirates",
-  addressAr: "مدينة دبي الصناعية، مستودع 00، دبي، الإمارات العربية المتحدة",
-  mapUrl: "https://maps.google.com/?q=Dubai+Industrial+City",
-  phone: "+971 4 000 0000",
-  whatsapp: "971500000000",
-  email: "info@azzhab.com",
-  emailSales: "sales@azzhab.com",
+  address: "Behind 3rd Industrial Street, Industrial Area 6, Sharjah, United Arab Emirates",
+  addressAr: "خلف الشارع الصناعي الثالث، المنطقة الصناعية 6، الشارقة، الإمارات العربية المتحدة",
+  mapUrl: "https://maps.google.com/?q=3rd+Industrial+Street,+Industrial+Area+6,+Sharjah,+UAE",
+  phone: "+971 58 943 0016",
+  whatsapp: "971589430016",
+  // Temporary: move to an azzhab.com mailbox once the domain is registered.
+  email: "info@essent.ae",
+  emailSales: "info@essent.ae",
   hours: "Sun – Thu, 09:00 – 18:00 (GST)",
   hoursAr: "الأحد – الخميس، 09:00 – 18:00 (بتوقيت الخليج)",
   licence: "000000",

@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 
 import WholesaleForm from "@/components/forms/WholesaleForm";
-import { Card, Eyebrow, Figure, Num, PageHead, RuleList, SpecTable, pad } from "@/components/ui";
+import { Eyebrow, Figure, Num, PageHead, Steps, pad } from "@/components/ui";
 import { href, routes } from "@/lib/i18n";
 import { pageMetadata, resolveLocale, type PageParams } from "@/lib/page";
-import { site, waHref } from "@/lib/site";
+import { site, telHref, waHref } from "@/lib/site";
 
 export async function generateMetadata({ params }: PageParams): Promise<Metadata> {
   const { locale, t } = await resolveLocale(params);
@@ -14,12 +14,6 @@ export async function generateMetadata({ params }: PageParams): Promise<Metadata
 export default async function WholesalePage({ params }: PageParams) {
   const { locale, t } = await resolveLocale(params);
   const ws = t.ws;
-
-  const models = [
-    { title: ws.m1t, text: ws.m1x },
-    { title: ws.m2t, text: ws.m2x },
-    { title: ws.m3t, text: ws.m3x },
-  ];
 
   return (
     <main id="main">
@@ -33,14 +27,13 @@ export default async function WholesalePage({ params }: PageParams) {
 
       <section className="section">
         <div className="shell">
-          <div className="stack" data-reveal>
-            <Eyebrow>{ws.modelsEyebrow}</Eyebrow>
-            <h2 className="h2">{ws.modelsTitle}</h2>
-          </div>
-          <div className="grid grid--3 mt-l">
-            {models.map((model, i) => (
-              <Card key={model.title} index={i + 1} title={model.title} text={model.text} />
-            ))}
+          <div className="grid grid--split">
+            <div data-reveal>
+              <Eyebrow>{ws.lineEyebrow}</Eyebrow>
+              <h2 className="h2 mt-m">{ws.lineTitle}</h2>
+              <p className="lead mt-m">{ws.lineText}</p>
+            </div>
+            <Figure seed="azzhab-amani" width={1000} height={1000} ratio="square" />
           </div>
         </div>
       </section>
@@ -49,25 +42,26 @@ export default async function WholesalePage({ params }: PageParams) {
         <div className="shell">
           <div className="grid grid--split">
             <div data-reveal>
-              <Eyebrow>{ws.termsEyebrow}</Eyebrow>
-              <h2 className="h2 mt-m">{ws.termsTitle}</h2>
-              <p className="small mt-m">{ws.termsNote}</p>
-              <div className="mt-l">
-                <Figure seed="azzhab-export" width={1200} height={750} ratio="wide" />
-              </div>
+              <Eyebrow>{ws.rangeEyebrow}</Eyebrow>
+              <h2 className="h2 mt-m">{ws.rangeTitle}</h2>
             </div>
-            <SpecTable
-              rows={[
-                [ws.t1k, ws.t1v],
-                [ws.t2k, ws.t2v],
-                [ws.t3k, ws.t3v],
-                [ws.t4k, ws.t4v],
-                [ws.t5k, ws.t5v],
-                [ws.t6k, ws.t6v],
-                [ws.t7k, ws.t7v],
-              ]}
-            />
+            <p className="lead" data-reveal>
+              {ws.rangeText}
+            </p>
           </div>
+
+          <ul className="certs mt-l" data-reveal>
+            <li>
+              <b>{ws.tag1}</b>
+            </li>
+            <li>
+              <b>{ws.tag2}</b>
+            </li>
+            <li>
+              <b>{ws.tag3}</b>
+              <span>{ws.tag3x}</span>
+            </li>
+          </ul>
         </div>
       </section>
 
@@ -75,24 +69,33 @@ export default async function WholesalePage({ params }: PageParams) {
         <div className="shell">
           <div className="grid grid--split">
             <div data-reveal>
-              <Eyebrow>{ws.supEyebrow}</Eyebrow>
-              <h2 className="h2 mt-m">{ws.supTitle}</h2>
+              <Eyebrow>{ws.shelfEyebrow}</Eyebrow>
+              <h2 className="h2 mt-m">{ws.shelfTitle}</h2>
             </div>
-            <RuleList
-              items={[
-                { label: ws.sup1 },
-                { label: ws.sup2 },
-                { label: ws.sup3 },
-                { label: ws.sup4 },
-                { label: ws.sup5 },
-                { label: ws.sup6 },
-              ]}
-            />
+            <p className="lead" data-reveal>
+              {ws.shelfText}
+            </p>
           </div>
         </div>
       </section>
 
-      <section className="section section--paper" id="price-list">
+      <section className="section section--paper">
+        <div className="shell">
+          <div className="stack" data-reveal>
+            <Eyebrow>{ws.buyEyebrow}</Eyebrow>
+            <h2 className="h2">{ws.buyTitle}</h2>
+          </div>
+          <Steps
+            items={[
+              { title: ws.b1t, text: ws.b1x },
+              { title: ws.b2t, text: ws.b2x },
+              { title: ws.b3t, text: ws.b3x },
+            ]}
+          />
+        </div>
+      </section>
+
+      <section className="section" id="line-sheet">
         <div className="shell">
           <div className="stack" data-reveal>
             <Eyebrow>{ws.formEyebrow}</Eyebrow>
@@ -104,19 +107,6 @@ export default async function WholesalePage({ params }: PageParams) {
             <WholesaleForm locale={locale} form={t.form} ws={ws} />
 
             <aside className="form-aside" data-reveal>
-              <div>
-                <Eyebrow plain>{ws.asideTitle}</Eyebrow>
-                <ul className="list-rule mt-m">
-                  {[ws.aside1, ws.aside2, ws.aside3, ws.aside4].map((item, i) => (
-                    <li key={item}>
-                      <div className="row">
-                        <Num>{pad(i + 1)}</Num>
-                        <span className="grow small">{item}</span>
-                      </div>
-                    </li>
-                  ))}
-                </ul>
-              </div>
               <div>
                 <Eyebrow plain>{t.form.next}</Eyebrow>
                 <ul className="list-rule mt-m">
@@ -136,6 +126,9 @@ export default async function WholesalePage({ params }: PageParams) {
                   <a className="h4" href={`mailto:${site.emailSales}`}>
                     {site.emailSales}
                   </a>
+                </p>
+                <p className="small">
+                  <a href={telHref(site.phone)}>{site.phone}</a>
                 </p>
                 <p className="mt-s">
                   <a className="link" href={waHref(site.whatsapp)} target="_blank" rel="noopener">

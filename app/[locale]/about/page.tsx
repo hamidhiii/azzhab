@@ -37,7 +37,9 @@ export default async function AboutPage({ params }: PageParams) {
             <div className="stack" data-reveal>
               <p className="lead">{a.story1}</p>
               <p>{a.story2}</p>
-              <p className="small">{a.story3}</p>
+              <p>{a.story3}</p>
+              <p>{a.story4}</p>
+              <p>{a.story5}</p>
             </div>
           </div>
         </div>
@@ -63,7 +65,6 @@ export default async function AboutPage({ params }: PageParams) {
             <div data-reveal>
               <Eyebrow>{a.timeEyebrow}</Eyebrow>
               <h2 className="h2 mt-m">{a.timeTitle}</h2>
-              <p className="small mt-m">{a.timeNote}</p>
             </div>
             <RuleList
               items={[
@@ -71,6 +72,7 @@ export default async function AboutPage({ params }: PageParams) {
                 { lead: a.tm2y, label: a.tm2t },
                 { lead: a.tm3y, label: a.tm3t },
                 { lead: a.tm4y, label: a.tm4t },
+                { lead: a.tm5y, label: a.tm5t },
               ]}
             />
           </div>
@@ -90,10 +92,6 @@ export default async function AboutPage({ params }: PageParams) {
               items={[
                 { label: a.mkt1 },
                 { label: a.mkt2 },
-                { label: a.mkt3 },
-                { label: a.mkt4 },
-                { label: a.mkt5 },
-                { label: a.mkt6 },
               ]}
             />
           </div>

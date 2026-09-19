@@ -56,7 +56,6 @@ export default async function PrivateLabelPage({ params }: PageParams) {
             <div data-reveal>
               <Eyebrow>{pl.termsEyebrow}</Eyebrow>
               <h2 className="h2 mt-m">{pl.termsTitle}</h2>
-              <p className="small mt-m">{pl.termsNote}</p>
             </div>
             <SpecTable
               rows={[
@@ -66,7 +65,6 @@ export default async function PrivateLabelPage({ params }: PageParams) {
                 [pl.t4k, pl.t4v],
                 [pl.t5k, pl.t5v],
                 [pl.t6k, pl.t6v],
-                [pl.t7k, pl.t7v],
               ]}
             />
           </div>
