@@ -30,11 +30,21 @@ export default async function HomePage({ params }: PageParams) {
       <section className="hero">
         <div className="hero__media">
           <Image
-            src="https://picsum.photos/seed/azzhab-atelier/1920/1200"
+            className="hero__poster"
+            src="/media/hero-poster.webp"
             alt=""
             fill
             sizes="100vw"
             priority
+          />
+          {/* Raw markup so "muted" reaches the server HTML — without it mobile Safari blocks autoplay. */}
+          <div
+            className="hero__video"
+            aria-hidden="true"
+            dangerouslySetInnerHTML={{
+              __html:
+                '<video autoplay muted loop playsinline preload="auto" poster="/media/hero-poster.webp"><source src="/media/hero.mp4" type="video/mp4"></video>',
+            }}
           />
         </div>
         <div className="hero__inner">
@@ -169,7 +179,13 @@ export default async function HomePage({ params }: PageParams) {
               <Eyebrow>{h.catsEyebrow}</Eyebrow>
               <h2 className="h2 mt-m">{h.catsTitle}</h2>
             </div>
-            <Figure seed="azzhab-bottles" width={1200} height={750} ratio="wide" />
+            <Figure
+              src="/media/categories.webp"
+              alt={h.catsAlt}
+              width={1536}
+              height={1024}
+              ratio="wide"
+            />
           </div>
 
           <div className="mt-l">

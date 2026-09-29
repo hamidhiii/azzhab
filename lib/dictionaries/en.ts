@@ -118,6 +118,7 @@ export const en = {
     stat4t: "Days from approval to shipment",
     catsEyebrow: "Categories",
     catsTitle: "What we produce",
+    catsAlt: "Eau de parfum, extrait, attar oil and a reed diffuser",
     cat1: "Eau de parfum",
     cat1x: "30 to 100 ml, 18 to 22 percent concentration",
     cat2: "Extrait de parfum",

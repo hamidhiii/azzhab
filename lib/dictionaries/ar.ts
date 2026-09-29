@@ -121,6 +121,7 @@ export const ar: Dictionary = {
     stat4t: "يومًا من الاعتماد إلى الشحن",
     catsEyebrow: "الفئات",
     catsTitle: "ما الذي ننتجه",
+    catsAlt: "ماء عطر، وخلاصة عطر، وزيت عطري، وموزّع عطر بالأعواد",
     cat1: "ماء عطر (Eau de parfum)",
     cat1x: "من 30 إلى 100 مل، بتركيز 18 إلى 22 بالمئة",
     cat2: "مستخلص العطر (Extrait)",

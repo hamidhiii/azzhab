@@ -171,6 +171,8 @@ export function Accordion({ items }: { items: { q: string; a: string }[] }) {
 
 export function Figure({
   seed,
+  src,
+  alt = "",
   width,
   height,
   ratio = "wide",
@@ -178,7 +180,11 @@ export function Figure({
   className,
   priority,
 }: {
-  seed: string;
+  /** Placeholder seed, used until a real photo is supplied via src. */
+  seed?: string;
+  /** Real photo from /public — shown in colour. */
+  src?: string;
+  alt?: string;
   width: number;
   height: number;
   ratio?: "wide" | "tall" | "square";
@@ -187,10 +193,13 @@ export function Figure({
   priority?: boolean;
 }) {
   return (
-    <figure className={`figure figure--${ratio}${className ? ` ${className}` : ""}`} data-reveal>
+    <figure
+      className={`figure figure--${ratio}${src ? " figure--photo" : ""}${className ? ` ${className}` : ""}`}
+      data-reveal
+    >
       <Image
-        src={`https://picsum.photos/seed/${seed}/${width}/${height}`}
-        alt=""
+        src={src ?? `https://picsum.photos/seed/${seed}/${width}/${height}`}
+        alt={alt}
         fill
         sizes="(max-width: 900px) 100vw, 45vw"
         priority={priority}
