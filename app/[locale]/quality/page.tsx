@@ -60,7 +60,7 @@ export default async function QualityPage({ params }: PageParams) {
               <Eyebrow>{q.testEyebrow}</Eyebrow>
               <h2 className="h2 mt-m">{q.testTitle}</h2>
               <div className="mt-l">
-                <Figure seed="azzhab-lab" width={1200} height={750} ratio="wide" />
+                <Figure src="/media/laboratory.webp" alt={q.testAlt} width={1586} height={992} ratio="wide" />
               </div>
             </div>
             <RuleList

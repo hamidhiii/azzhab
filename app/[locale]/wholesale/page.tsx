@@ -33,7 +33,7 @@ export default async function WholesalePage({ params }: PageParams) {
               <h2 className="h2 mt-m">{ws.lineTitle}</h2>
               <p className="lead mt-m">{ws.lineText}</p>
             </div>
-            <Figure seed="azzhab-amani" width={1000} height={1000} ratio="square" />
+            <Figure src="/media/amani.webp" alt={ws.lineAlt} width={1086} height={1448} ratio="tall" />
           </div>
         </div>
       </section>
