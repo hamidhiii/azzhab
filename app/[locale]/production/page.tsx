@@ -38,9 +38,9 @@ export default async function ProductionPage({ params }: PageParams) {
           </div>
 
           <div className="grid grid--3 mt-l">
-            <Figure seed="azzhab-compounding" width={900} height={1200} ratio="tall" caption={p.fig1} />
-            <Figure seed="azzhab-filling" width={900} height={1200} ratio="tall" caption={p.fig2} />
-            <Figure seed="azzhab-packing" width={900} height={1200} ratio="tall" caption={p.fig3} />
+            <Figure src="/media/compounding.webp" width={1024} height={1536} ratio="tall" caption={p.fig1} />
+            <Figure src="/media/evaluation.webp" width={1086} height={1448} ratio="tall" caption={p.fig2} />
+            <Figure src="/media/packing.webp" width={1086} height={1448} ratio="tall" caption={p.fig3} />
           </div>
         </div>
       </section>

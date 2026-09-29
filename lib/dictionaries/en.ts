@@ -270,7 +270,7 @@ export const en = {
     introText: "The floor is laid out in one direction: raw material intake, compounding, maceration, filling, assembly, then finished goods. Materials move forward and never cross back, which is what keeps a repeat order smelling like the first one.",
     introText2: "Every batch carries a number that ties the finished bottle back to the concentrate, the alcohol lot and the operator who ran the line.",
     fig1: "Compounding room",
-    fig2: "Filling line",
+    fig2: "Evaluation and sampling",
     fig3: "Assembly and packing",
     lineEyebrow: "Capabilities",
     lineTitle: "Lines and capacity",
