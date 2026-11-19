@@ -88,11 +88,11 @@ export default async function ContactPage({ params }: PageParams) {
             </div>
 
             <Figure
-              seed="azzhab-dubai"
-              width={900}
-              height={1200}
-              ratio="tall"
-              caption={c.mapNote}
+              src="/media/filling-line.webp"
+              alt={c.facilityAlt}
+              width={1672}
+              height={941}
+              ratio="wide"
             />
           </div>
         </div>

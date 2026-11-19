@@ -31,7 +31,7 @@ export default async function AboutPage({ params }: PageParams) {
               <Eyebrow>{a.storyEyebrow}</Eyebrow>
               <h2 className="h2 mt-m">{a.storyTitle}</h2>
               <div className="mt-l">
-                <Figure seed="azzhab-house" width={1000} height={1000} ratio="square" />
+                <Figure src="/media/datum-store.webp" alt={a.storyAlt} width={1086} height={1448} ratio="tall" />
               </div>
             </div>
             <div className="stack" data-reveal>
